@@ -19,7 +19,7 @@ echo "Building ${ARCH} sysroot from ${DISTRO} at ${DISTRO_SOURCE}..."
 # Note that this can fail if you have Rosetta enabled on Apple Silicon
 # This can be disabled from "Features in Development" page
 debootstrap \
-  --include=ca-certificates,curl,file,libc6-dev,make \
+  --include=ca-certificates,curl,file,libc6-dev,make,libstdc++6 \
   --no-merged-usr --variant=minbase $DISTRO /sysroot \
   $DISTRO_SOURCE || (
     cat /sysroot/debootstrap/debootstrap.log && 
